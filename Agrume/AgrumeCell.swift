@@ -100,6 +100,7 @@ final class AgrumeCell: UICollectionViewCell {
     contentView.addGestureRecognizer(singleTapGesture)
     contentView.addGestureRecognizer(doubleTapGesture)
     scrollView.addGestureRecognizer(panGesture)
+    scrollView.addGestureRecognizer(singleTapGesture)
     contentView.addGestureRecognizer(swipeGesture)
   }
 

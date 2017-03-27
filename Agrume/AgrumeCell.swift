@@ -120,7 +120,7 @@ final class AgrumeCell: UICollectionViewCell, UIActionSheetDelegate {
   }
   
   func presentActionSheet() {
-    let action = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: NSLocalizedString("save-to-local", comment: ""))
+    let action = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: NSLocalizedString("cancel", comment: ""), destructiveButtonTitle: nil, otherButtonTitles: NSLocalizedString("save-to-local", comment: ""))
     action.show(in: self)
   }
   
@@ -232,7 +232,6 @@ extension AgrumeCell: UIGestureRecognizerDelegate {
   }
 
   @objc fileprivate func singleTap(_ gesture: UITapGestureRecognizer) {
-    print("tapped")
     dismiss()
   }
 

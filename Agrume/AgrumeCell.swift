@@ -11,7 +11,7 @@ protocol AgrumeCellDelegate: class {
   
 }
 
-final class AgrumeCell: UICollectionViewCell {
+final class AgrumeCell: UICollectionViewCell, UIActionSheetDelegate {
 
   fileprivate static let targetZoomForDoubleTap: CGFloat = 3
   fileprivate static let minFlickDismissalVelocity: CGFloat = 800
@@ -101,7 +101,43 @@ final class AgrumeCell: UICollectionViewCell {
     contentView.addGestureRecognizer(doubleTapGesture)
     scrollView.addGestureRecognizer(panGesture)
     contentView.addGestureRecognizer(swipeGesture)
+    imageView.addGestureRecognizer(longPressGesture)
   }
+  
+  private lazy var longPressGesture: UILongPressGestureRecognizer = {
+    let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+    longPressGesture.require(toFail: self.doubleTapGesture)
+    longPressGesture.delegate = self
+    return longPressGesture
+  }()
+  
+  func handleLongPress(sender: UILongPressGestureRecognizer) {
+    if (sender.state == UIGestureRecognizerState.ended) {
+      print("Long press Ended")
+    } else if (sender.state == UIGestureRecognizerState.began) {
+      presentActionSheet()
+    }
+  }
+  
+  func presentActionSheet() {
+    let action = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Save to Photo Library")
+    action.show(in: self)
+  }
+  
+  func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
+    if buttonIndex != actionSheet.cancelButtonIndex {
+      UIImageWriteToSavedPhotosAlbum(imageView.image!, self, #selector(self.image(image:didFinishSavingWithError:contextInfo:)), nil)
+    }
+  }
+  
+  func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafeRawPointer) {
+    if error == nil {
+      print("photo saved to library")
+    } else {
+      print("saving error")
+    }
+  }
+
 
 }
 

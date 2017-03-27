@@ -198,7 +198,8 @@ extension AgrumeCell: UIGestureRecognizerDelegate {
   }
 
   @objc fileprivate func singleTap(_ gesture: UITapGestureRecognizer) {
-    dismissWithFlick(CGPoint(x: 10, y: 10))
+    scrollView.zoomScale = 1
+    dismiss()
   }
 
   fileprivate func dismiss() {

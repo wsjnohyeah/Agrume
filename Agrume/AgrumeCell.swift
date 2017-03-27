@@ -21,7 +21,7 @@ final class AgrumeCell: UICollectionViewCell {
     let scrollView = UIScrollView(frame: self.contentView.bounds)
     scrollView.delegate = self
     scrollView.zoomScale = 1
-    scrollView.maximumZoomScale = 4
+    scrollView.maximumZoomScale = 2
     scrollView.isScrollEnabled = false
     scrollView.showsHorizontalScrollIndicator = false
     scrollView.showsVerticalScrollIndicator = false
@@ -198,7 +198,7 @@ extension AgrumeCell: UIGestureRecognizerDelegate {
   }
 
   @objc fileprivate func singleTap(_ gesture: UITapGestureRecognizer) {
-    delegate?.dismissAfterTap()
+    dismissWithFlick(CGPoint(x: 10, y: 10))
   }
 
   fileprivate func dismiss() {

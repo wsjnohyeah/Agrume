@@ -508,9 +508,11 @@ extension Agrume: UICollectionViewDelegate {
 extension Agrume: AgrumeCellDelegate {
   
   private func dismissCompletion(_ finished: Bool) {
+    print("trying to dismiss")
     presentingViewController?.dismiss(animated: false) { [unowned self] in
       self.cleanup()
       self.didDismiss?()
+      print("did dismiss")
     }
   }
   
@@ -535,6 +537,7 @@ extension Agrume: AgrumeCellDelegate {
   }
   
   func dismissAfterTap() {
+    print("delegate detected dismiss")
     view.isUserInteractionEnabled = false
     
     UIView.animate(withDuration: Agrume.transitionAnimationDuration,

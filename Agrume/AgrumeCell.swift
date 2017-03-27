@@ -100,7 +100,6 @@ final class AgrumeCell: UICollectionViewCell {
     contentView.addGestureRecognizer(singleTapGesture)
     contentView.addGestureRecognizer(doubleTapGesture)
     scrollView.addGestureRecognizer(panGesture)
-    scrollView.addGestureRecognizer(singleTapGesture)
     contentView.addGestureRecognizer(swipeGesture)
   }
 
@@ -199,7 +198,7 @@ extension AgrumeCell: UIGestureRecognizerDelegate {
   }
 
   @objc fileprivate func singleTap(_ gesture: UITapGestureRecognizer) {
-    scrollView.zoomScale = 1
+    print("tapped")
     dismiss()
   }
 

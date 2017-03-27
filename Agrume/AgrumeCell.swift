@@ -117,9 +117,7 @@ extension AgrumeCell: UIGestureRecognizerDelegate {
       return abs(velocity.y) > abs(velocity.x)
     } else if let _ = gestureRecognizer as? UISwipeGestureRecognizer, notZoomed() {
       return false
-    } else if let tap = gestureRecognizer as? UITapGestureRecognizer, tap == singleTapGesture && !notZoomed() {
-      return false
-    }
+    } 
     return true
   }
 

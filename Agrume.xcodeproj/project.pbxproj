@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		94318E541D32612D0096215A /* AgrumeServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94318E531D32612D0096215A /* AgrumeServiceLocator.swift */; };
 		94318E561D3261640096215A /* AgrumeServiceLocatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94318E551D3261640096215A /* AgrumeServiceLocatorTests.swift */; };
+		AA81F4451E89538A00C0B126 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA81F4471E89538A00C0B126 /* Localizable.strings */; };
 		F2A51FF41B10E00700924912 /* Agrume.h in Headers */ = {isa = PBXBuildFile; fileRef = F2A51FF31B10E00700924912 /* Agrume.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F2A51FFA1B10E00700924912 /* Agrume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2A51FEE1B10E00700924912 /* Agrume.framework */; };
 		F2A5200B1B10E29B00924912 /* Agrume.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A5200A1B10E29B00924912 /* Agrume.swift */; };
@@ -30,6 +31,8 @@
 /* Begin PBXFileReference section */
 		94318E531D32612D0096215A /* AgrumeServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgrumeServiceLocator.swift; sourceTree = "<group>"; };
 		94318E551D3261640096215A /* AgrumeServiceLocatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgrumeServiceLocatorTests.swift; sourceTree = "<group>"; };
+		AA81F4461E89538A00C0B126 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AA81F4481E89539700C0B126 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F2A51FEE1B10E00700924912 /* Agrume.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Agrume.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A51FF21B10E00700924912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2A51FF31B10E00700924912 /* Agrume.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Agrume.h; sourceTree = "<group>"; };
@@ -90,6 +93,7 @@
 				F2DC79D31B17012300818A8C /* UIViewExtensions.swift */,
 				F2DC79D51B170C4B00818A8C /* ImageDownloader.swift */,
 				F2D9598B1B1A108800073772 /* AgrumeCell.swift */,
+				AA81F4471E89538A00C0B126 /* Localizable.strings */,
 			);
 			path = Agrume;
 			sourceTree = "<group>";
@@ -196,6 +200,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = F2A51FE41B10E00700924912;
 			productRefGroup = F2A51FEF1B10E00700924912 /* Products */;
@@ -213,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA81F4451E89538A00C0B126 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,11 +262,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		AA81F4471E89538A00C0B126 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA81F4461E89538A00C0B126 /* en */,
+				AA81F4481E89539700C0B126 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		F2A520021B10E00700924912 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -312,6 +331,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

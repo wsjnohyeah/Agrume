@@ -120,7 +120,7 @@ final class AgrumeCell: UICollectionViewCell, UIActionSheetDelegate {
   }
   
   func presentActionSheet() {
-    let action = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Save to Photo Library")
+    let action = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: NSLocalizedString("save-to-local", comment: ""))
     action.show(in: self)
   }
   
